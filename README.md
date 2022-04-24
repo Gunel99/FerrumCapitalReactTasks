@@ -14,3 +14,20 @@ Answer:
 
 Answer: 
     Some components don’t know their children previously. This is common for components as sidebar and other components that represents 'boxes'. Using children props are recommended that passing children elements of such components directly into their output. Its syntax is "props.children".
+
+
+13) Question 13: Why API calls are to be made from componentDidMount and not in constructor/componentWillMount?
+
+Answer:
+
+    In react, component lifecycle methods are async. So, next method will start immediately without waiting for first completed. 
+
+    1) componentWillMount() is called only once in component's lifecycle and immediately before the component is rendered on the server.
+    2) It is used to save states' changes before the initial render, because, setState doesn't create a new render in this method. It is called before render(), that's why, set state can't trigger a re-render.
+    3) We can't pause rendering to wait for data to load.
+
+    1) componentDidMount() is called on the client and after the initial render when the client has received data from the server.
+    2) But, it allows us, to do a lot of things like changing state, starting animations and so on. Becuase, a state change will cause a re-render of the component.
+    3) We can use it to set up long-running processes. In this method, data will not be loaded until after an initial render.
+
+    So, An empty data will show in page after the initial render for componentWillMount() runs before the initial render, and this reason, set state also doesn't trigger a re-render. But, componentDidMount() runs after the initial render, and it also waits for trigering a set state. So, that's why we use the componentDidMount() method.
