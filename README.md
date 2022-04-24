@@ -1,4 +1,4 @@
-12) Question 12: What is the virtual DOM? How does react use the virtual DOM to render the UI?
+11) 12) Question 11, 12: What is the virtual DOM? How does react use the virtual DOM to render the UI?
 
 Answer:
 When the application runs, DOM loads and presents the UI view to users. It is also slower than most javascript operations. When javascript frameworks update The DOM much more, so, this slowness increases. For ex: We want to make a change in any part in application, but, if change happens, all the same, the whole page is rendered again. It also takes time and more works than necessary. The Virtual DOM (VDOM) appears for inefficient updating. In react, there is Virtual DOM object for every DOM object and it is almost a copy of DOM object. When DOM object is created, it is copied to Virtual DOM and is keeped in back. Manipulating Virtual DOM is much faster. When we render a jsx element, its virtual DOM object updates. After Virtual DOM is updated, react compares it with Virtual DOM snapshot that was taken before it has updated and so, react figures out exactly which Virtual DOM objects have changed. It is called 'diffing'.
