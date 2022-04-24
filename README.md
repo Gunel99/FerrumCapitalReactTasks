@@ -13,5 +13,4 @@ Answer:
 10) Question 10: What is children prop?
 
 Answer: 
-    Some components don’t know their children previously. This is common for components as sidebar and other components that represents 'boxes'. Using children props are recommended that passing children elements of such components directly into their output. Its syntax is "props.children".
-
+    Some components don’t know their children previously. This is common for components as sidebar and other components that represents 'boxes'. Using children props are recommended that passing children elements of such components directly into their output. Its syntax is "props.children"
